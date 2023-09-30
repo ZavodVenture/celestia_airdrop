@@ -1,5 +1,5 @@
 import os.path
-from entities import Claimer, Error, Proxy, Account
+from entities import Claimer, Error, Account
 from helpers import adspower
 from configparser import ConfigParser
 from colorama import Fore, init
@@ -140,7 +140,7 @@ def main():
         print(f'{Fore.RED}Не удалось подключиться к AdsPower. Проверьте, запущен ли он.{Fore.RESET}\n')
         init_exit()
 
-    if isinstance(adspower.bypass_metamask(), Error):
+    if adspower.bypass_metamask() is False:
         print(f'{Fore.RED}Не удалось изменить расширение MetaMask. Проверьте, установлено ли оно{Fore.RESET}\n')
         init_exit()
 
@@ -148,7 +148,7 @@ def main():
         print(f'{Fore.RED}Файл input.txt не найден{Fore.RESET}\n')
         init_exit()
 
-    data: List[str] = open('input.txt').read().split('\n')
+    data = open('input.txt').read().split('\n')
 
     if not data[-1]:
         data = data[:-1]
@@ -193,4 +193,6 @@ def main():
 
 if __name__ == '__main__':
     init()
+    if not os.path.exists('logs'):
+        os.mkdir('logs')
     main()

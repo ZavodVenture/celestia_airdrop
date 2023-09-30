@@ -1,6 +1,3 @@
-from colorama import Fore
-
-
 class Error:
     name = ''
     message = ''

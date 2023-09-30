@@ -4,7 +4,6 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
-from selenium.webdriver.common.keys import Keys
 from entities import Error
 import sys
 import os
@@ -131,14 +130,6 @@ class Claimer:
             WebDriverWait(self.driver, 15).until(ec.presence_of_element_located((By.XPATH, '//*[@id="app"]/div/div[2]/div/div/div/div/div/div[1]/div[2]/div/div[2]/input'))).send_keys('Celestia')
             sleep(0.1)
             WebDriverWait(self.driver, 15).until(ec.element_to_be_clickable((By.XPATH, '//*[@id="app"]/div/div[2]/div/div/div/div/div/div[5]/div[1]/div[2]/div/div/div/div/div'))).click()
-
-            # sleep(0.1)
-            # WebDriverWait(self.driver, 15).until(ec.presence_of_element_located((By.XPATH, '//*[@id="app"]/div/div[2]/div/div/div/div/div/div[1]/div[2]/div/div[2]/input'))).send_keys(Keys.CONTROL, 'a')
-            # WebDriverWait(self.driver, 15).until(ec.presence_of_element_located((By.XPATH, '//*[@id="app"]/div/div[2]/div/div/div/div/div/div[1]/div[2]/div/div[2]/input'))).send_keys(Keys.BACKSPACE)
-            # sleep(0.1)
-            # WebDriverWait(self.driver, 15).until(ec.presence_of_element_located((By.XPATH, '//*[@id="app"]/div/div[2]/div/div/div/div/div/div[1]/div[2]/div/div[2]/input'))).send_keys('Cosmos')
-            # sleep(0.1)
-            # WebDriverWait(self.driver, 15).until(ec.element_to_be_clickable((By.XPATH, '//*[@id="app"]/div/div[2]/div/div/div/div/div/div[5]/div[1]/div[2]/div/div/div/div/div'))).click()
 
             WebDriverWait(self.driver, 15).until(ec.element_to_be_clickable((By.XPATH, '//*[@id="app"]/div/div[2]/div/div/div/div/div/div[9]/div/button'))).click()  # Сохарняем сети
 

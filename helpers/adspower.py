@@ -176,6 +176,9 @@ def bypass_metamask():
     else:
         return False
 
+    if 'ext' not in os.listdir(adspower_path) and 'extension' not in os.listdir(adspower_path):
+        return False
+
     if 'extension' in os.listdir(adspower_path):
         extension_folders = os.listdir(f'{adspower_path}\\extension')
 
